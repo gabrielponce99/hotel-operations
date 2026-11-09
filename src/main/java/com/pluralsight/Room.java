@@ -21,6 +21,10 @@ public class Room {
         return price;
     }
 
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
     public boolean isOccupied() {
         return occupied;
     }
