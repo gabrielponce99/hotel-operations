@@ -2,15 +2,15 @@ package com.pluralsight;
 
 public class Reservation {
     private String roomType;
+    private double price;
     private int numberOfNights;
     private boolean weekend;
-    private double price;
 
-    public Reservation(String roomType, int numberOfNights, boolean weekend, double price) {
+    public Reservation(String roomType, double price, int numberOfNights, boolean weekend) {
         this.roomType = roomType;
+        this.price = price;
         this.numberOfNights = numberOfNights;
         this.weekend = weekend;
-        this.price = price;
     }
 
     public String getRoomType() {
@@ -19,6 +19,14 @@ public class Reservation {
 
     public void setRoomType(String roomType) {
         this.roomType = roomType;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
     }
 
     public int getNumberOfNights() {
@@ -37,19 +45,11 @@ public class Reservation {
         this.weekend = weekend;
     }
 
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
     public double getReservationTotal() {
-        double reservationTotal = this.price + this.numberOfNights;
+        double reservationTotal = this.price * this.numberOfNights;
 
         if (this.isWeekend()) {
-            reservationTotal = (this.price + this.numberOfNights) * 1.10;
+            reservationTotal = (this.price * this.numberOfNights) * 1.10;
         }
 
         return reservationTotal;
