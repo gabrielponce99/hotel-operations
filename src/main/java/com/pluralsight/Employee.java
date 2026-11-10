@@ -6,6 +6,8 @@ public class Employee {
     private String department;
     private double hoursWorked;
     private double payRate;
+    private double startTime;
+    private boolean isPunchedIn;
 
     public Employee(String employeeId, String name, String department, double hoursWorked, double payRate) {
         this.employeeId = employeeId;
@@ -71,5 +73,15 @@ public class Employee {
 
     public double getTotalPay() {
         return (getRegularHours() * this.payRate) + (getOvertimeHours() * (payRate * 1.5));
+    }
+
+    public void punchTimeCard(int time) {
+        if (isPunchedIn) {
+            startTime += time - hoursWorked;
+            isPunchedIn = false;
+        } else {
+            startTime = time;
+            isPunchedIn = true;
+        }
     }
 }
