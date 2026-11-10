@@ -33,6 +33,12 @@ public class App {
         employee1.punchTimeCard(16);
         System.out.println("Hours after punching in and out: " + employee1.getHoursWorked());
 
+        Hotel hotel = new Hotel("Lakeside Inn", 2, 10);
+
+        System.out.println("Book 2 suites: " + hotel.bookRoom(2,true));
+        System.out.println("Book 1 more suite: " + hotel.bookRoom(1, false));
+        System.out.println("Available suites: " + hotel.getAvailableSuites());
+
 
     }
 }

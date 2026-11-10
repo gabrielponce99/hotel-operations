@@ -17,8 +17,8 @@ public class Hotel {
         this.name = name;
         this.numberOfSuites = numberOfSuites;
         this.numberOfRooms = numberOfRooms;
-        this.bookedSuites = bookedSuites;
-        this.bookedBasicRooms = bookedBasicRooms;
+        this.bookedSuites = 0;
+        this.bookedBasicRooms = 0;
     }
 
     public String getName() {
