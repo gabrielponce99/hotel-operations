@@ -4,7 +4,7 @@ public class App {
     public static void main(String[] args) {
         Reservation reservation = new Reservation("king", 139.00, 2, true);
         Employee employee = new Employee("12346", "Tamara Smith", "Bar", 48, 27.65);
-        Employee employee1 = new Employee("643216", "Samuel Clarkson", "Housekeeping", 16, 47.41);
+        Employee employee1 = new Employee("643216", "Samuel Clarkson", "Housekeeping", 0, 25.41);
 
         System.out.printf("Total stay: $%.2f", reservation.getReservationTotal());
         System.out.println();
@@ -26,12 +26,13 @@ public class App {
         System.out.println("After clean room: " + room.isAvailable());
 
 
+        employee1.punchIn();
+        employee1.punchOut();
+        System.out.println("Hours after punching in and out: " + employee1.getHoursWorked());
         employee1.punchTimeCard(8);
         employee1.punchTimeCard(16);
-        System.out.println(employee1.getHoursWorked());
-        employee1.punchTimeCard(8);
-        employee1.punchTimeCard(16);
-        System.out.println(employee1.getHoursWorked());
+        System.out.println("Hours after punching in and out: " + employee1.getHoursWorked());
+
 
     }
 }
