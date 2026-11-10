@@ -77,7 +77,7 @@ public class Employee {
 
     public void punchTimeCard(int time) {
         if (isPunchedIn) {
-            startTime += time - hoursWorked;
+            hoursWorked += time - startTime;
             isPunchedIn = false;
         } else {
             startTime = time;

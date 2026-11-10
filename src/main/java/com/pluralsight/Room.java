@@ -37,15 +37,16 @@ public class Room {
         return !isDirty() && !isOccupied();
     }
 
-    public boolean checkIn() {
-        return isOccupied() && isDirty();
+    public void checkIn() {
+        occupied = true;
+        dirty = true;
     }
 
-    public boolean checkOut() {
-        return !isOccupied() && isDirty();
+    public void checkOut() {
+        occupied = false;
     }
 
-    public boolean cleanRoom() {
-        return !isDirty();
+    public void cleanRoom() {
+        dirty = false;
     }
 }
