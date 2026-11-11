@@ -40,4 +40,31 @@ class RoomTest {
         assertEquals(true, room.isAvailable());
     }
 
+    @Test
+    public void checkIn_onDirtyRoom_staysNotOccupied() {
+        Room room = new Room(2, 124, false, true);
+
+        room.checkIn();
+
+        assertEquals(false, room.isOccupied());
+    }
+
+    @Test
+    public void checkIn_onOccupiedRoom_staysNotDirty() {
+        Room room = new Room(2, 124, true, false);
+
+        room.checkIn();
+
+        assertEquals(false, room.isDirty());
+    }
+
+    @Test
+    public void cleanRoom_onOccupiedRoom_staysDirty() {
+        Room room = new Room(2, 124, true, true);
+
+        room.cleanRoom();
+
+        assertEquals(false, room.isDirty());
+    }
+
 }

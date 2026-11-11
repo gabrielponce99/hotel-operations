@@ -38,8 +38,10 @@ public class Room {
     }
 
     public void checkIn() {
-        occupied = true;
-        dirty = true;
+        if (isAvailable()) {
+            this.occupied = true;
+            this.dirty = true;
+        }
     }
 
     public void checkOut() {
