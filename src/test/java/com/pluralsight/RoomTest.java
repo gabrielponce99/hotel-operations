@@ -17,4 +17,16 @@ class RoomTest {
         assertEquals(true, room.isOccupied());
         assertEquals(true, room.isDirty());
     }
+
+    @Test
+    public void checkOut_should_markRoomNotOccupiedAndStillDirty() {
+        Room room = new Room(1, 139, true, false);
+
+        room.checkOut();
+
+        assertEquals(false, room.isOccupied());
+        assertEquals(false, room.isDirty());
+        assertEquals(true, room.isAvailable());
+    }
+
 }
