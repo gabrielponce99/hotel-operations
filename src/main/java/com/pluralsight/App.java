@@ -29,6 +29,7 @@ public class App {
         employee1.punchIn();
         employee1.punchOut();
         System.out.println("Hours after punching in and out: " + employee1.getHoursWorked());
+
         employee1.punchTimeCard(8);
         employee1.punchTimeCard(16);
         System.out.println("Hours after punching in and out: " + employee1.getHoursWorked());
@@ -36,7 +37,7 @@ public class App {
         Hotel hotel = new Hotel("Lakeside Inn", 2, 10);
 
         System.out.println("Book 2 suites: " + hotel.bookRoom(2,true));
-        System.out.println("Book 1 more suite: " + hotel.bookRoom(1, false));
+        System.out.println("Book 1 more suite: " + hotel.bookRoom(1, true));
         System.out.println("Available suites: " + hotel.getAvailableSuites());
 
 

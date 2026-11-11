@@ -17,8 +17,8 @@ public class Hotel {
         this.name = name;
         this.numberOfSuites = numberOfSuites;
         this.numberOfRooms = numberOfRooms;
-        this.bookedSuites = 0;
-        this.bookedBasicRooms = 0;
+        this.bookedSuites = bookedSuites;
+        this.bookedBasicRooms = bookedBasicRooms;
     }
 
     public String getName() {
@@ -51,7 +51,7 @@ public class Hotel {
 
     public boolean bookRoom(int roomCount, boolean suite) {
         if (suite) {
-            if (roomCount > getAvailableRooms()) {
+            if (roomCount > getAvailableSuites()) {
                 return false;
             }
             bookedSuites += roomCount;
