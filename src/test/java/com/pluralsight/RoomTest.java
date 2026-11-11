@@ -64,7 +64,7 @@ class RoomTest {
 
         room.cleanRoom();
 
-        assertEquals(false, room.isDirty());
+        assertEquals(true, room.isDirty());
     }
 
 }

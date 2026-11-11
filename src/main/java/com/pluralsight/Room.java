@@ -49,6 +49,8 @@ public class Room {
     }
 
     public void cleanRoom() {
-        dirty = false;
+        if (isAvailable()) {
+            this.dirty = false;
+        }
     }
 }
