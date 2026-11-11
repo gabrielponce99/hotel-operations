@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class RoomTest {
     @Test
-    public void checkIn_should_markRoomOccupiedAndDirty(){
+    public void checkIn_should_markRoomOccupiedAndDirty() {
         //arrange
         Room room = new Room(1, 139, false, false);
 
@@ -23,6 +23,17 @@ class RoomTest {
         Room room = new Room(1, 139, true, false);
 
         room.checkOut();
+
+        assertEquals(false, room.isOccupied());
+        assertEquals(false, room.isDirty());
+        assertEquals(true, room.isAvailable());
+    }
+
+    @Test
+    public void cleanRoom_should_markRoomAvailableAndStillDirty() {
+        Room room = new Room(1, 139, false, true);
+
+        room.cleanRoom();
 
         assertEquals(false, room.isOccupied());
         assertEquals(false, room.isDirty());
